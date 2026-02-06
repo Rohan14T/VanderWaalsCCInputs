@@ -16,7 +16,7 @@ Vc_L = st.sidebar.number_input("Critical volume (L/mol)", min_value=0.0001, valu
 
 st.sidebar.header("Cycle Temperatures")
 Th = st.sidebar.number_input("Hot body temperature (K)", min_value=0.1, max_value=Tc-0.1, value=145.0)
-Tcold = st.sidebar.number_input("Cold body temperature (K)", min_value=0.1, max_value=Th-0.1, value=140.0)
+Tcold = st.sidebar.number_input("Cold body temperature (K)", min_value=0.1, max_value=Th-0.1, value=125.0)
 
 st.sidebar.header("Cycle Volumes")
 V1_L = st.sidebar.number_input("Initial volume (L/mol)", min_value=Vc_L*1.01, value=Vc_L*3)
@@ -150,6 +150,7 @@ plt.close(fig)
 st.subheader("Cycle Summary")
 st.write(f"Net Work = {W_net:.2f} J/mol")
 st.write(f"Efficiency ≈ {efficiency*100:.2f}%")
+
 
 
 
