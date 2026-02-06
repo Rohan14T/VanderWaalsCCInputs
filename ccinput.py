@@ -19,8 +19,8 @@ Th = st.sidebar.number_input("Hot body temperature (K)", min_value=0.1, max_valu
 Tcold = st.sidebar.number_input("Cold body temperature (K)", min_value=0.1, max_value=Th-0.1, value=140.0)
 
 st.sidebar.header("Cycle Volumes")
-V1_L = st.sidebar.number_input("Initial volume (L/mol)", min_value=Vc_L*1.01, value=Vc_L*1.05)
-V2_L = st.sidebar.number_input("End hot isothermal volume (L/mol)", min_value=V1_L*1.01, value=V1_L*1.1)
+V1_L = st.sidebar.number_input("Initial volume (L/mol)", min_value=Vc_L*1.01, value=Vc_L*2)
+V2_L = st.sidebar.number_input("End hot isothermal volume (L/mol)", min_value=V1_L*1.01, value=V1_L*5)
 
 st.sidebar.header("Molecule Structure")
 mol_type = st.sidebar.selectbox("Molecule type", ["monatomic", "linear", "nonlinear"])
@@ -150,4 +150,5 @@ plt.close(fig)
 st.subheader("Cycle Summary")
 st.write(f"Net Work = {W_net:.2f} J/mol")
 st.write(f"Efficiency ≈ {efficiency*100:.2f}%")
+
 
